@@ -1,0 +1,26 @@
+{
+  "name": "guanabara_status_be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "env-cmd -e local tsc",
+    "build:watch": "env-cmd -e local tsc --watch",
+    "start": "env-cmd -e local node bin/index.js",
+    "start:watch": "env-cmd -e local nodemon bin/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "nodemon": "^2.0.16",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "env-cmd": "^10.1.0",
+    "express": "^4.18.1",
+    "octokit": "^1.7.1"
+  }
+}
