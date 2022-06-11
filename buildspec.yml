@@ -1,0 +1,26 @@
+version: 0.2
+
+env:
+  git-credential-helper: yes
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - yarn
+  pre_build:
+    commands:
+      - git config --global user.email "petersonvgama@gmail.com"
+      - git config --global user.name "Serenity - CodeBuild"
+  build:
+    commands:
+      - yarn build
+  post_build:
+    commands:
+      - git checkout $BRANCH
+      - yarn version --patch
+artifacts:
+  files:
+    - bin/**/*
+  name: guanabara_status_be/`yarn --silent current-version`

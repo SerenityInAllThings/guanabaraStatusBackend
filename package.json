@@ -7,7 +7,9 @@
     "build": "env-cmd -e local tsc",
     "build:watch": "env-cmd -e local tsc --watch",
     "start": "env-cmd -e local node bin/index.js",
-    "start:watch": "env-cmd -e local nodemon bin/index.js"
+    "start:watch": "env-cmd -e local nodemon bin/index.js",
+    "current-version": "npm -s run env echo '$npm_package_version'",
+    "postversion": "git push origin HEAD:$BRANCH && git push --tags"
   },
   "author": "",
   "license": "ISC",
