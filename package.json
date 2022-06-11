@@ -1,6 +1,6 @@
 {
   "name": "guanabara_status_be",
-  "version": "1.0.1",
+  "version": "1.0.6-0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,8 +8,7 @@
     "build:watch": "env-cmd -e local tsc --watch",
     "start": "env-cmd -e local node bin/index.js",
     "start:watch": "env-cmd -e local nodemon bin/index.js",
-    "current-version": "npm -s run env echo '$npm_package_version'",
-    "postversion": "git push origin HEAD:$BRANCH && git push --tags"
+    "current-version": "npm -s run env echo '$npm_package_version'"
   },
   "author": "",
   "license": "ISC",
