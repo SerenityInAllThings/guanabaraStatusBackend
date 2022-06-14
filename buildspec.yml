@@ -24,7 +24,8 @@ phases:
       - sed -i "s/guanabara_status_be\/.*$/guanabara_status_be\/${VERSION}/" appsec.yml
       - zip -r build.zip bin/ node_modules/ package.json .env-cmdrc
       - git commit -a -m "Bumping version ${VERSION}"
-      - git push origin HEAD:main --all
+      - git push origin HEAD:main
+      - git push origin HEAD:main --tags
 artifacts:
   files:
     - build.zip
