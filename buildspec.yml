@@ -20,10 +20,8 @@ phases:
     commands:
       - git checkout $BRANCH
       - yarn version --patch
+      - zip -r `yarn --silent current-version`.zip bin/ node_modules/ package.json .env-cmdrc
 artifacts:
   files:
-    - bin/**/*
-    - package.json
-    - .env-cmdrc
-    - node_modules/**/*
+    - `yarn --silent current-version`.zip
   name: guanabara_status_be/`yarn --silent current-version`
