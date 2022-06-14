@@ -18,13 +18,13 @@ phases:
       - yarn build
   post_build:
     commands:
-      - git checkout $BRANCH
+      - git checkout main
       - yarn version --patch
       - export VERSION=`yarn --silent current-version`
       - sed -i "s/guanabara_status_be\/.*$/guanabara_status_be\/${VERSION}/" appsec.yml
       - zip -r build.zip bin/ node_modules/ package.json .env-cmdrc
       - git commit -a -m "Bumping version ${VERSION}"
-      - git push origin HEAD:$BRANCH --all
+      - git push origin HEAD:main --all
 artifacts:
   files:
     - build.zip
