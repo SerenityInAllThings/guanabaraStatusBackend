@@ -25,5 +25,5 @@ artifacts:
     - bin/**/*
     - package.json
     - .env-cmdrc
-    - node_modules/
+    - node_modules/**/*
   name: guanabara_status_be/`yarn --silent current-version`
