@@ -52,6 +52,10 @@ app.get("/github/bearer", async ({ query: { token } }, res) => {
   }
 });
 
+app.get("/ping", (_, res) => {
+  res.send({ ping: 'pong' })
+});
+
 const port = getPort();
 
 app.listen(port, () => {
