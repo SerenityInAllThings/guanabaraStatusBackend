@@ -21,7 +21,7 @@ phases:
       - git checkout main
       - yarn version --patch
       - export VERSION=`yarn --silent current-version`
-      - zip -r -q build.zip bin/ node_modules/ scripts/ package.json .env-cmdrc appspec.yml buildspec.yml
+      - zip -r -q build.zip bin/ scripts/ package.json .env-cmdrc appspec.yml buildspec.yml
       - git push origin HEAD:main --tags
 artifacts:
   files:
