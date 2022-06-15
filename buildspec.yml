@@ -21,7 +21,7 @@ phases:
       - git checkout main
       - yarn version --patch
       - export VERSION=`yarn --silent current-version`
-      - sed -i "s/guanabara_status_be\/.*\/$/guanabara_status_be\/${VERSION}\/" appspec.yml
+      - sed -i "s/guanabara_status_be\/.*\/$/guanabara_status_be\/${VERSION}\//" appspec.yml
       - zip -r -q build.zip bin/ node_modules/ package.json .env-cmdrc appspec.yml buildspec.yml
       - git commit -a -m "Bumping version ${VERSION}"
       - git push origin HEAD:main
