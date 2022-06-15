@@ -8,8 +8,15 @@ permissions:
   - object: /app
     owner: ec2-user
     group: ec2-user
+  - object: /
+    pattern: "/app"
+    owner: ec2-user
+    group: ec2-user
 hooks:
   AfterInstall:
+    - location: /scripts/setPermissions.sh
+      timeout: 30 
+      runas: ec2-user
     - location: /scripts/stop.sh
       timeout: 30
       runas: ec2-user
