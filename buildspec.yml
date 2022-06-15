@@ -27,7 +27,8 @@ phases:
       - cat package.json
       - ls
       - git status
-      - git commit -a -m "Bumping version ${VERSION}"
+      - git add package.json appspec.yml
+      - git commit -m "Bumping to version ${VERSION}"
       - git push origin HEAD:main
       - git push origin HEAD:main --tags
 artifacts:
