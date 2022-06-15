@@ -4,6 +4,10 @@ os: linux
 files:
   - source: /
     destination: /app
+permissions:
+  object: /app
+  owner: ec2-user
+  group: ec2-user
 hooks:
   AfterInstall:
     - location: /scripts/stop.sh
