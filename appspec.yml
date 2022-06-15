@@ -6,8 +6,8 @@ files:
     destination: /app
 hooks:
   AfterInstall:
-    - location: /app/scripts/stop.sh
+    - location: /scripts/stop.sh
       timeout: 30
   ApplicationStart:
-    - location: /app/scripts/start.sh
+    - location: /scripts/start.sh
       timeout: 30 
