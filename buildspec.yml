@@ -19,10 +19,12 @@ phases:
   post_build:
     commands:
       - git checkout main
+      - cat package.json
       - yarn version --patch
       - export VERSION=`yarn --silent current-version`
       - sed -i "s/guanabara_status_be\/.*\/$/guanabara_status_be\/${VERSION}/" appspec.yml README.md
       - zip -r -q build.zip bin/ node_modules/ package.json .env-cmdrc appspec.yml buildspec.yml
+      - cat package.json
       - ls
       - git status
       - git commit -a -m "Bumping version ${VERSION}"
